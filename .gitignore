@@ -1,0 +1,4 @@
+VagrantFile
+db.sqlite3
+.vagrant
+env
