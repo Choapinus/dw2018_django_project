@@ -1,4 +1,3 @@
-VagrantFile
-db.sqlite3
-.vagrant
+.vagrant/
+Vagrantfile
 env
