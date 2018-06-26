@@ -1,0 +1,34 @@
+body{
+	background: #170a21;
+}
+
+header{
+	background: black;
+}
+
+header .navbar-brand{
+	background: url(img/steom-menu.png) no-repeat;
+	width: 150px;
+	height: 60px;
+}
+
+header .navbar a{
+    color: white;
+}
+
+footer{
+	background: #171a21;
+}
+
+footer .container p{
+	text-align: center;
+	margin: auto;
+	font-size: 11px;
+	color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+section #fondo{
+	background: url(img/steom_morado-700.png) no-repeat;
+}
