@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+	
+<body onLoad="redireccionar()">
+	<div class="col-lg-12" align="center">	
+		<img src="/static/img/foto-webpay.png" alt="Chania" alt="Cinque Terre" width="900" height="500">
+	</div>
+</body>
+
+<script>
+  function redireccionar() {
+    setTimeout("location.href='/games'", 3000);
+  }
+  </script>
+
+{% endblock %}

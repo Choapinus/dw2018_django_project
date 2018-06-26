@@ -60,3 +60,9 @@ def compareGames(request, game1_id, game2_id):
 	context['game1'] = game1
 	context['game2'] = game2
 	return render(request, template_name, context)
+
+def buyGames(request):
+	template_name = 'buy_games.html'
+	context = {}
+
+	return render(request,template_name,context)

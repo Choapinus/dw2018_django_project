@@ -46,7 +46,7 @@
 				</td>
 				{% else %}
 				<td>
-					<button id="btnComprar" class="btn btn-primary">Comprar!!</button>
+					<button id="btnComprar" onclick="redireccionar()" class="btn btn-primary">Comprar!!</button>
 				</td>
 				{% endif %}
 		    </tr>
@@ -82,5 +82,12 @@
 			alert("Seleccione dos juegos para comparar");
 		}
 	});
+</script>
+
+
+<script>
+	function redireccionar() {
+    location.href="/games/buy"
+  }
 </script>
 {% endblock %}

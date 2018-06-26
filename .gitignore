@@ -1,4 +1,4 @@
-VagrantFile
-db.sqlite3
+/VagrantFile
+steam/db.sqlite3
 .vagrant
 env
