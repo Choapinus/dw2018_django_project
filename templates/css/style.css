@@ -7,7 +7,7 @@ header{
 }
 
 header .navbar-brand{
-	background: url(img/steom-menu.png) no-repeat;
+	background: url(../img/steom-menu.png) no-repeat;
 	width: 150px;
 	height: 60px;
 }
@@ -30,7 +30,7 @@ footer .container p{
 }
 
 section #fondo{
-	background: url(img/steom-menu.png) no-repeat;
+	background: url(../img/steom-menu.png) no-repeat;
 }
 
 #log{

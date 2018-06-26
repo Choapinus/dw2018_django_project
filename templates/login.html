@@ -1,67 +1,69 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="icon" type="image/png" href="img/favicon.ico" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="style.css">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="css/style.css">
 
-    <title>Steom</title>
-  </head>
-  <body>
-   
-   <div class="container" id="log">
-     <div class="row align-items-center">
-       <div class="col-sm-12"> </div>
-       <div class="col-sm-3"></div>
-       <div class="col-sm-6"> 
-              <form action="" id="form1">
-                <div class="row" >
-                  <div class="col-sm-6"  id="log-ses"> 
-                        <div class="row">
-                          <div class="col-sm-12" id="log-ses-cab">INICIAR SESIÓN</div>
-                          <div class="col-sm-12 " id="log-ses-corp">Ingresar con cuenta de Steom existente</div>
-                          <div class="col-sm-12" id="log-ses-tit">Nombre de Usuario</div>
-                          <div class="col-sm-12"> 
-                              <input type="text" class="form-group" id="txtUsuario"> 
-                          </div>
-                          <div class="col-sm-12" id="log-ses-tit">Contraseña</div>
-                          <div class="col-sm-12">
-                             <input type="text" class="form-group" id="txtContraseña"> 
-                          </div>
-                          <div class="col-sm-12">
-                             <button type="button" id="Iniciar" class="btn btn-success">Iniciar sesión</button>
-                          </div>
-                        </div>
-                  </div>
-                </form>
-                <div class="col-sm-6"  id="log-ses"> 
-                  <form action="" id="form1">
-                      <div class="row form-group">
-                        <div class="col-sm-12" id="log-ses-cab">CREAR</div>
-                        <div class="col-sm-12" id="log-ses-corp">Cree una cuenta gratis</div>
-                        <div class="col-sm-12" id="log-ses-corp">Uniserse es gtaris y su uso, sencillo. Continua para crear una cuenta y usar Steom.</div>  
-                        <div class="col-sm-12">
-                          <button type="button" id="Iniciar" class="btn btn-success">Crea cuenta</button>
-                        </div>
-                      </div>
-                    </form>
-                </div>
-       </div>
-       <div class="col-sm-3"></div>
-     </div>
-   </div>
+		<title>Steom</title>
+	</head>
+	<body>
+	 
+	 <div class="container" id="log">
+		 <div class="row align-items-center">
+			 <div class="col-sm-12"> </div>
+			 <div class="col-sm-3"></div>
+			 <div class="col-sm-6">
+			 	{{ csrf_token }}
+				<form action="" id="form1">
+					<div class="row" >
+						<div class="col-sm-6"  id="log-ses"> 
+							<div class="row">
+								<div class="col-sm-12" id="log-ses-cab">INICIAR SESIÓN</div>
+								<div class="col-sm-12 " id="log-ses-corp">Ingresar con cuenta de Steom existente</div>
+								<div class="col-sm-12" id="log-ses-tit">Nombre de Usuario</div>
+								<div class="col-sm-12"> 
+										<input type="text" class="form-group" id="txtUsuario"> 
+								</div>
+								<div class="col-sm-12" id="log-ses-tit">Contraseña</div>
+								<div class="col-sm-12">
+									 <input type="password" class="form-group" id="txtContraseña"> 
+								</div>
+								<div class="col-sm-12">
+									 <button type="button" id="Iniciar" class="btn btn-success">Iniciar sesión</button>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="col-sm-6"  id="log-ses"> 
+						<form action="" id="form1">
+								<div class="row form-group">
+									<div class="col-sm-12" id="log-ses-cab">CREAR</div>
+									<div class="col-sm-12" id="log-ses-corp">Cree una cuenta gratis</div>
+									<div class="col-sm-12" id="log-ses-corp">Uniserse es gratis y su uso sencillo. Continua para crear una cuenta y usar Steom.</div>  
+									<div class="col-sm-12">
+										<button type="button" id="Iniciar" class="btn btn-success">Crea cuenta</button>
+									</div>
+								</div>
+							</form>
+					</div>
+			 </div>
+		 </div>
+	 </div>
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	</body>
 </html>
