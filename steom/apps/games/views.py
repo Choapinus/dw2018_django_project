@@ -16,12 +16,18 @@ def addGame(request):
 		if form.is_valid():
 			form.save()
 			return redirect('index')
+	else: # get
+		form = GameForm()
+		return render(request, template_name, {'form': form})
 
 
 def removeGame(request, game_id):
+	template_name = ''
 	game = Game.objects.get(id=game_id)
 	if game.delete():
 		return redirect('index')
+	else: # get
+		return render(request, template_name)
 
 def listGame(request):
 	template_name = ''
@@ -41,7 +47,9 @@ def editGame(request, game_id):
 		else:
 			form = GameForm(instance=game)
 		return (request, template_name, {'form' : form})
-
+	else: # get
+		form = GameForm()
+		return render(request, template_name, {'form': form})
 
 
 
