@@ -1,16 +1,19 @@
+from .models import Game
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Game
-#from .form import *
+from django.contrib.auth.decorators import login_required
+from .forms import GameForm
 
 # Create your views here.
 
+@login_required
 def index(request):
 	return render(request, 'base.html')
 
+@login_required
 def addGame(request):
 	template_name = ''
-	if request.method == 'POST': # O get
+	if request.method == 'POST':
 		form = GameForm(request.POST)
 		if form.is_valid():
 			form.save()
@@ -19,14 +22,16 @@ def addGame(request):
 		form = GameForm()
 		return render(request, template_name, {'form': form})
 
+@login_required
 def removeGame(request, game_id):
 	template_name = ''
 	game = Game.objects.get(id=game_id)
 	if game.delete():
 		return redirect('index')
-	else: # get
+	else: # si no existe
 		return render(request, template_name)
 
+@login_required
 def listGame(request):
 	template_name = 'list_games.html'
 	context = {}
@@ -34,6 +39,7 @@ def listGame(request):
 	context["games"] = game
 	return render(request, template_name, context)
 
+@login_required
 def editGame(request, game_id):
 	template_name = ''
 	game = get_object_or_404(Game, id = game_id)
@@ -48,6 +54,3 @@ def editGame(request, game_id):
 	else: # get
 		form = GameForm()
 		return render(request, template_name, {'form': form})
-
-
-
