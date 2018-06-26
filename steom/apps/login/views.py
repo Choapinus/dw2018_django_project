@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate, logout, login
 
 def login_auth(request):
 	
+	template = 'login.html'
+
 	if request.POST:
 		username = request.POST["user"]
 		pwd = request.POST["pwd"]
