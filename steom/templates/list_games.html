@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% for game in games %}
+		{{game}}
+	{% empty %}
+		<p style="color:white">No hay juegos que mostrar :(</p>
+	{% endfor %}
+
+{% endblock %}

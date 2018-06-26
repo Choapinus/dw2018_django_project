@@ -6,8 +6,7 @@ from .models import Game
 # Create your views here.
 
 def index(request):
-	return HttpResponse('<p>holi</p>')
-
+	return render(request, 'base.html')
 
 def addGame(request):
 	template_name = ''
@@ -20,7 +19,6 @@ def addGame(request):
 		form = GameForm()
 		return render(request, template_name, {'form': form})
 
-
 def removeGame(request, game_id):
 	template_name = ''
 	game = Game.objects.get(id=game_id)
@@ -30,7 +28,7 @@ def removeGame(request, game_id):
 		return render(request, template_name)
 
 def listGame(request):
-	template_name = ''
+	template_name = 'list_games.html'
 	context = {}
 	game = Game.objects.all()
 	context["games"] = game

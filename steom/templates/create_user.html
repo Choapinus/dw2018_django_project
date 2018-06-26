@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		{% load static %}
+		{% load bootstrap4 %}
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,58 +17,27 @@
 		<title>Steom</title>
 	</head>
 	<body>
-	 
-	 <div class="container" id="log">
-		 <div class="row align-items-center">
-			 <div class="col-sm-12"> </div>
-			 <div class="col-sm-3"></div>
-			 <div class="col-sm-6">
-				<form method="post" id="form1">
-					{% csrf_token %}
-					{% if messages %}
-						{% for message in messages %}
-							<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-								{{ message }}
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-						{% endfor %}
-					{% endif %}
-					<div class="row" >
-						<div class="col-sm-6"  id="log-ses"> 
-							<div class="row">
-								<div class="col-sm-12" id="log-ses-cab">INICIAR SESIÓN</div>
-								<div class="col-sm-12 " id="log-ses-corp">Ingresar con cuenta de Steom existente</div>
-								<div class="col-sm-12" id="log-ses-tit">Nombre de Usuario</div>
-								<div class="col-sm-12"> 
-									<input type="text" class="form-group" id="txtUsuario" name="user">
-								</div>
-								<div class="col-sm-12" id="log-ses-tit">Contraseña</div>
-								<div class="col-sm-12">
-									 <input type="password" class="form-group" id="txtContraseña" name="pwd">
-								</div>
-								<div class="col-sm-12">
-									 <button type="submit" id="Iniciar" class="btn btn-success">Iniciar sesión</button>
-								</div>
-							</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12"> </div>
+			 	<div class="col-sm-3"></div>
+				<div class="col-lg-6" id="log-ses">
+					<div class="col-sm-12" id="log-ses-cab" style="color: white">Registrar Usuario</div>
+					<form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						{% bootstrap_form form %}
+						<div align="center">
+							{% buttons %}
+								<button type="submit" class="btn btn-primary col-md-4">Guardar</button>
+								<a href="{% url 'login_auth' %}">
+									<input type="button" value="Cancelar" class="btn btn-danger col-md-4">
+								</a>
+							{% endbuttons %}
 						</div>
 					</form>
-					<div class="col-sm-6"  id="log-ses"> 
-						<form action="" id="form1">
-								<div class="row form-group">
-									<div class="col-sm-12" id="log-ses-cab">CREAR</div>
-									<div class="col-sm-12" id="log-ses-corp">Cree una cuenta gratis</div>
-									<div class="col-sm-12" id="log-ses-corp">Uniserse es gratis y su uso sencillo. Continua para crear una cuenta y usar Steom.</div>  
-									<div class="col-sm-12">
-										<button type="button" id="Iniciar" class="btn btn-success">Crea cuenta</button>
-									</div>
-								</div>
-							</form>
-					</div>
-			 </div>
-		 </div>
-	 </div>
+				</div>
+			</div>
+		</div>
 
 
 

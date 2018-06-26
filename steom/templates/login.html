@@ -54,16 +54,14 @@
 						</div>
 					</form>
 					<div class="col-sm-6"  id="log-ses"> 
-						<form action="" id="form1">
-								<div class="row form-group">
-									<div class="col-sm-12" id="log-ses-cab">CREAR</div>
-									<div class="col-sm-12" id="log-ses-corp">Cree una cuenta gratis</div>
-									<div class="col-sm-12" id="log-ses-corp">Uniserse es gratis y su uso sencillo. Continua para crear una cuenta y usar Steom.</div>  
-									<div class="col-sm-12">
-										<button type="button" id="Iniciar" class="btn btn-success">Crea cuenta</button>
-									</div>
-								</div>
-							</form>
+						<div class="row form-group">
+							<div class="col-sm-12" id="log-ses-cab">CREAR</div>
+							<div class="col-sm-12" id="log-ses-corp">Cree una cuenta gratis</div>
+							<div class="col-sm-12" id="log-ses-corp">Uniserse es gratis y su uso sencillo. Continua para crear una cuenta y usar Steom.</div>  
+							<div class="col-sm-12">
+								<a href="{% url 'register_user' %}" type="button" id="Iniciar" class="btn btn-success">Crea cuenta</a>
+							</div>
+						</div>
 					</div>
 			 </div>
 		 </div>
