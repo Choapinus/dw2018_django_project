@@ -30,5 +30,31 @@ footer .container p{
 }
 
 section #fondo{
-	background: url(img/steom_morado-700.png) no-repeat;
+	background: url(img/steom-menu.png) no-repeat;
+}
+
+#log{
+	color: #FFFFFF;
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  	min-height: 100vh; /* These two lines are counted as one :-)       */
+	display: flex;
+	align-items: center;
+}
+
+#log-ses{
+	background: #171a21;
+	min-height: 230px;
+}
+
+#log-ses-cab{
+	font-size: 20px;
+	font-weight: bold;
+}
+#log-ses-corp{
+	font-size: 12px;
+	font-weight: lighter;
+}
+#log-ses-tit{
+	font-size: 14px;
+	font-weight: bold;
 }
