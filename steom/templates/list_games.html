@@ -1,11 +1,81 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
 
 {% block content %}
+	<h1 style="margin-top:30px; color: white">Listado de Juegos</h1>
+	<table class="table table-dark">
+	  <thead>
+	    <tr>
+	      <th scope="col">Comparar</th>
+	      <th scope="col">Nombre</th>
+	      <th scope="col">Categoria</th>
+	      <th scope="col">Genero</th>
+	      <th scope="col">Desarrollador</th>
+	      <th scope="col">Precio</th>
+	      <th scope="col">Imagen</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {% for game in games %}
+			<tr>
+				{# <th scope="row">{{ game.id }}</th> #}
+				<th scope="row">
+					<div class="checkbox">
+					  <input type="checkbox" value="{{ game.id }}">
+					</div>
+				</th>
+				<td>{{ game.name_game }}</td>
+				<td>{{ game.category }}</td>
+				<td>{{ game.gender }}</td>
+				<td>{{ game.developer.name_developer }}</td>
+				<td>{{ game.price }}</td>
+				<td><img src="{{ game.image.url }}" class="img-thumbnail" width="100"></td>
+				{% if request.user.is_staff %}
+				<td>
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Manager
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="{% url 'edit_games' game.id %}">Editar</a>
+							<a class="dropdown-item" href="{% url 'remove_games' game.id %}">Eliminar</a>
+						</div>
+					</div>
+				</td>
+				{% endif %}
+		    </tr>
+		{% empty %}
+			<p style="color:white">No hay juegos que mostrar :(</p>
+		{% endfor %}
+	  </tbody>
+	</table>
+	{% if games %}
+		<div align="center">
+			{% buttons %}
+				<button id="compare" class="btn btn-primary col-md-12">Comparar!</button>
+			{% endbuttons %}
+		</div>
+	{% endif %}
+{% endblock %}
 
-	{% for game in games %}
-		{{ game }}
-	{% empty %}
-		<p style="color:white">No hay juegos que mostrar :(</p>
-	{% endfor %}
-
+{% block jscript %}
+<script>
+	//añadirlo a un boton y que sea onclick
+	$("#compare").click(function(){
+		if ($("input:checkbox:checked").length > 1){
+			var game1 = parseInt($("input:checkbox:checked")[0].value);
+			var game2 = parseInt($("input:checkbox:checked")[1].value);
+			var _url = "{% url 'compare_games' 0 0 %}";
+			_url = _url.replace('0', game1);
+			_url = _url.replace('0', game2);
+			// alert(_url);
+			// alert(_url);
+			window.location.replace(_url);
+		}
+		else{
+			alert("Seleccione dos juegos para comparar");
+		}
+	});
+</script>
 {% endblock %}
