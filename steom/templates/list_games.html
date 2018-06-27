@@ -14,6 +14,7 @@
 	      <th scope="col">Desarrollador</th>
 	      <th scope="col">Precio</th>
 	      <th scope="col">Imagen</th>
+	      <th scope="col">Opciones</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -43,6 +44,10 @@
 						</div>
 					</div>
 				</td>
+				{% else %}
+				<td>
+					<button id="btnComprar" class="btn btn-primary">Comprar!!</button>
+				</td>
 				{% endif %}
 		    </tr>
 		{% empty %}
@@ -63,7 +68,7 @@
 <script>
 	//añadirlo a un boton y que sea onclick
 	$("#compare").click(function(){
-		if ($("input:checkbox:checked").length > 1){
+		if ($("input:checkbox:checked").length == 2){
 			var game1 = parseInt($("input:checkbox:checked")[0].value);
 			var game2 = parseInt($("input:checkbox:checked")[1].value);
 			var _url = "{% url 'compare_games' 0 0 %}";

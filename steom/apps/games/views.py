@@ -57,11 +57,6 @@ def compareGames(request, game1_id, game2_id):
 	context = {}
 	game1 = get_object_or_404(Game, pk = game1_id)
 	game2 = get_object_or_404(Game, pk = game2_id)
-	print(game1)
-	print(game2)
 	context['game1'] = game1
 	context['game2'] = game2
 	return render(request, template_name, context)
-
-
-	# return HttpResponse(str(game1_id)+str(game2_id))
